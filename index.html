@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebNavigator - Popular Sites Directory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="55" height="55" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4361ee" />
+                            <stop offset="50%" stop-color="#7209b7" />
+                            <stop offset="100%" stop-color="#f72585" />
+                        </linearGradient>
+                        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.2)" />
+                        </filter>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <circle cx="50" cy="50" r="42" fill="url(#logo-gradient)" filter="url(#shadow)" />
+                    <path d="M50 20 L80 60 L65 80 L35 80 L20 60 Z" fill="white" opacity="0.15" />
+                    <path d="M50 30 L70 60 L60 75 L40 75 L30 60 Z" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="50" cy="45" r="8" fill="white" opacity="0.8" filter="url(#glow)" />
+                    <path d="M40 65 L60 65" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <div class="title-container">
+                    <h1>WebCompass</h1>
+                    <p class="subtitle">Navigate the digital world</p>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Discover websites...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+
+        <div class="category-tabs">
+            <button class="tab active" data-category="all">All</button>
+            <button class="tab" data-category="social">Social</button>
+            <button class="tab" data-category="tech">Tech</button>
+            <button class="tab" data-category="shopping">Shopping</button>
+            <button class="tab" data-category="video">Video</button>
+            <button class="tab" data-category="news">News</button>
+            <button class="tab" data-category="tools">Tools</button>
+        </div>
+
+        <main id="sites-container">
+            <!-- Website cards will be generated via JavaScript -->
+        </main>
+
+        <footer>
+            <p> 2023 WebCompass | Curated global website directory</p>
+            <div class="theme-toggle">
+                <span>Theme</span>
+                <button id="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
